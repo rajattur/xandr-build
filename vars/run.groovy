@@ -14,7 +14,7 @@ def call() {
 
                         stage('Checkout') {
                             if (env.BRANCH_NAME) {
-                                checkout scm
+                                git branch: 'feature/jenkins-module', credentialsId: 'xandr-git', url: 'https://kr367s@codecloud.web.att.com/scm/st_addco/audience-builder-api.git'
                             } else {
                                 println 'Skipping checkout as SCM is not configured'
                             }

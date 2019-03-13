@@ -10,7 +10,7 @@ def call() {
             def constants = new Constants()
             def aws_region = constants.getDockerRegistry()
             println(aws_region.aws_region)
-            withEnv(["S3_URL=${params.s3_bucket}"]) {
+            withEnv(["S3_URL=${params.get("s3_bucket")}"]) {
                 sh '''
                     echo "${S3_URL}"
                     ls -al && \

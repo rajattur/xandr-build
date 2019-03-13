@@ -1,4 +1,4 @@
-import com.att.xandr.getConstants
+import com.att.xandr.Constants.getConstants
 def constants = new getConstants()
 def call() {
     node() {

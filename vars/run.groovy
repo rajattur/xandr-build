@@ -14,7 +14,7 @@ def call() {
 
                         stage('Checkout') {
                             if (env.BRANCH_NAME) {
-                                git branch: 'feature/jenkins-module', credentialsId: 'xandr-git', url: 'https://kr367s@codecloud.web.att.com/scm/st_addco/audience-builder-api.git'
+                                checkout scm
                             } else {
                                 println 'Skipping checkout as SCM is not configured'
                             }
@@ -28,6 +28,8 @@ def call() {
                             withEnv(["S3_URL=${params.get("s3_bucket")}"]) {
                                 sh '''
                                     echo "${S3_URL}"
+                                    ls -al && \
+                                    cd audiencebuilder-gui && \
                                     ls -al
                                 '''        
                             }

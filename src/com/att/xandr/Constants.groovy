@@ -1,6 +1,6 @@
 #!/usr/bin/groovy
 package com.att.xandr
 
-String getDockerRegistry() {
-    return "dockercentral.it.att.com:5100"
+Map getDockerRegistry() {
+    return [aws_region:'us-east-1']
 }

@@ -9,7 +9,7 @@ def call() {
             echo "Building..."
             def constants = new Constants()
             def aws_region = constants.getDockerRegistry()
-            println(aws_region)
+            println(aws_region.aws_region)
             withEnv(["S3_URL=${params.s3_bucket}"]) {
                 sh '''
                     echo "${S3_URL}"

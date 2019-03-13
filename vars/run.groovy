@@ -1,3 +1,5 @@
+import com.att.xandr.Constants
+def constants = new Constants()
 def call() {
     node() {
         stage('Checkout') {
@@ -5,6 +7,8 @@ def call() {
         }
         stage('Build') {
             echo "Building..."
+            def aws_region = constants.getConstants()
+            println(aws_region)
             withEnv(["S3_URL=${params.s3_bucket}"]) {
                 sh '''
                     echo "${S3_URL}"

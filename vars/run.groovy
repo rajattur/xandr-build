@@ -7,7 +7,7 @@ def call() {
         }
         stage('Build') {
             echo "Building..."
-            def aws_region = constants.getConstants()
+            def aws_region = constants.getDetail()
             println(aws_region)
             withEnv(["S3_URL=${params.s3_bucket}"]) {
                 sh '''

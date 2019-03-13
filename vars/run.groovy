@@ -1,5 +1,5 @@
 import com.att.xandr.getConstants
-def constants = new Constants()
+def constants = new getConstants()
 def call() {
     node() {
         stage('Checkout') {

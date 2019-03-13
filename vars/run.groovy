@@ -28,8 +28,6 @@ def call() {
                             withEnv(["S3_URL=${params.get("s3_bucket")}"]) {
                                 sh '''
                                     echo "${S3_URL}"
-                                    ls -al && \
-                                    cd audiencebuilder-gui && \
                                     ls -al
                                 '''        
                             }

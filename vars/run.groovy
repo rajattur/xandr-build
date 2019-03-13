@@ -5,6 +5,14 @@ def call() {
         }
         stage('Build') {
             echo "Building..."
+            withEnv(["S3_URL=${params.s3_bucket}"]) {
+                sh '''
+                    echo "${S3_URL}"
+                    ls -al && \
+                    cd audiencebuilder-gui && \
+                    ls -al
+                '''        
+            }
         }
     }
 }

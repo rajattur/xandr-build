@@ -11,7 +11,7 @@ def call() {
             stage('Main') {
                 steps {
                     script {
-
+                        sh "java -version"
                         stage('Checkout') {
                             if (env.BRANCH_NAME) {
                                 checkout scm
